@@ -172,6 +172,78 @@ export const LoginPage = () => {
             <ArrowRight size={18} />
           </button>
         </form>
+
+        {/* Quick Demo Access for Live GitHub Pages Evaluation */}
+        <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', textAlign: 'center' }}>
+            Instant Demo Access
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem' }}>
+            <button
+              type="button"
+              onClick={async () => {
+                setEmail('student@edupulse.edu');
+                setPassword('Student@123');
+                setLoading(true);
+                try {
+                  const user = await login({ email: 'student@edupulse.edu', password: 'Student@123' });
+                  navigate('/student');
+                } catch (e) {
+                  setError('Login failed');
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="btn btn-secondary btn-sm"
+              style={{ fontSize: '0.75rem', padding: '0.45rem 0.25rem', justifyContent: 'center' }}
+            >
+              🎓 Student
+            </button>
+            <button
+              type="button"
+              onClick={async () => {
+                setEmail('faculty@edupulse.edu');
+                setPassword('Faculty@123');
+                setLoading(true);
+                try {
+                  const user = await login({ email: 'faculty@edupulse.edu', password: 'Faculty@123' });
+                  navigate('/faculty');
+                } catch (e) {
+                  setError('Login failed');
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="btn btn-secondary btn-sm"
+              style={{ fontSize: '0.75rem', padding: '0.45rem 0.25rem', justifyContent: 'center' }}
+            >
+              👨‍🏫 Faculty
+            </button>
+            <button
+              type="button"
+              onClick={async () => {
+                setEmail('admin@edupulse.edu');
+                setPassword('Admin@123');
+                setLoading(true);
+                try {
+                  const user = await login({ email: 'admin@edupulse.edu', password: 'Admin@123' });
+                  navigate('/admin');
+                } catch (e) {
+                  setError('Login failed');
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="btn btn-secondary btn-sm"
+              style={{ fontSize: '0.75rem', padding: '0.45rem 0.25rem', justifyContent: 'center' }}
+            >
+              ⚡ Admin
+            </button>
+          </div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '0.65rem' }}>
+            Default credentials: <code style={{ color: 'var(--primary)', fontWeight: 600 }}>student@edupulse.edu</code> / <code style={{ color: 'var(--primary)', fontWeight: 600 }}>Student@123</code>
+          </div>
+        </div>
       </div>
     </div>
   );

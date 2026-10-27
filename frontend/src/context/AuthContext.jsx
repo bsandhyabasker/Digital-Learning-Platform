@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('edupulse_token');
     localStorage.removeItem('edupulse_user');
     setUser(null);
-    window.location.href = '/login';
+    window.location.hash = '#/login';
   };
 
   const updateProfileState = (updatedUser) => {

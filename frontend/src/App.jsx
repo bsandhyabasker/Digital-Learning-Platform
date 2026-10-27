@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -68,7 +68,7 @@ export function App() {
     <ThemeProvider>
       <AuthProvider>
         <NotificationProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               {/* Public Routes */}
               <Route path="/login" element={<LoginPage />} />
@@ -234,7 +234,7 @@ export function App() {
               {/* 404 Route */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </NotificationProvider>
       </AuthProvider>
     </ThemeProvider>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>EduPulse - Digital Learning Platform</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      (function() {
+        var path = window.location.pathname;
+        var repoName = '/Digital-Learning-Platform';
+        var route = path.startsWith(repoName) ? path.slice(repoName.length) : path;
+        var destination = repoName + '/#' + (route || '/') + window.location.search + window.location.hash;
+        window.location.replace(destination);
+      })();
+    </script>
+  </head>
+  <body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #0f172a; color: #f8fafc;">
+    <p>Redirecting to EduPulse Digital Learning Platform...</p>
+  </body>
+</html>
